@@ -16,7 +16,6 @@
       body: new FormData(form),
       headers: { Accept: "application/json" }
     }).then(() => {
-      form.remove();
       status.textContent = "Sent. ";
       const reloadButton = document.createElement("button");
       reloadButton.textContent = "Reload";
