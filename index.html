@@ -38,6 +38,10 @@
                     <li class="nav-item"><a class="nav-link" href="#about">Sobre mí</a></li>
                     <li class="nav-item"><a class="nav-link" href="#subjects">Materias</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Reservar clase</a></li>
+                    <li class="nav-item ms-lg-3 text-end small align-self-center" aria-label="Fecha y hora">
+                        <time id="fecha" class="d-block text-muted"></time>
+                        <time id="hora" class="d-block text-chemistry-dark fw-bold"></time>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -148,6 +152,21 @@
         </div>
     </footer>
 <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
+<script>
+    function actualizarHora() {
+        const hora = document.getElementById("hora");
+        hora.textContent = new Date().toLocaleTimeString();
+    }
+
+    function actualizarFecha() {
+        const fecha = document.getElementById("fecha");
+        fecha.textContent = new Date().toLocaleDateString();
+    }
+
+    actualizarFecha();
+    actualizarHora();
+    setInterval(actualizarHora, 1000);
+</script>
 
 </body>
 </html>
