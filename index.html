@@ -88,26 +88,37 @@
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card h-100 border-0 shadow-sm text-start">
-                        <div class="bg-secondary bg-opacity-20 py-4 px-3 text-muted card-img-top fw-bold">Química secundaria / bachillerato</div>
-                        <div class="card-body">
+                        <button class="btn bg-secondary bg-opacity-20 py-3 px-3 text-start text-muted fw-bold border-0 w-100 toggle-materia d-flex justify-content-between align-items-center" type="button">
+                            <span>Química secundaria / bachillerato</span>
+                            <small class="ms-2">▼</small>
+                        </button>
+                        <div class="card-body materia-contenido">
                             <h5 class="card-title fw-bold text-chemistry-dark">Fundamentos y preparación</h5>
                             <p class="card-text text-muted">Construcción de bases sólidas en estructuras atómicas, estequiometría, balanceo de ecuaciones y tendencias de la tabla periódica.</p>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-4">
                     <div class="card h-100 border-0 shadow-sm text-start">
-                        <div class="bg-secondary bg-opacity-20 py-4 px-3 text-muted card-img-top fw-bold">Química universitaria</div>
-                        <div class="card-body">
+                        <button class="btn bg-secondary bg-opacity-20 py-3 px-3 text-start text-muted fw-bold border-0 w-100 toggle-materia d-flex justify-content-between align-items-center" type="button">
+                            <span>Química universitaria</span>
+                            <small class="ms-2">▼</small>
+                        </button>
+                        <div class="card-body materia-contenido">
                             <h5 class="card-title fw-bold text-chemistry-dark">Química general I y II</h5>
                             <p class="card-text text-muted">Análisis profundo de termodinámica, equilibrio químico, cinética, soluciones ácido-base y ecuaciones de electroquímica.</p>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-4">
                     <div class="card h-100 border-0 shadow-sm text-start">
-                        <div class="bg-secondary bg-opacity-20 py-4 px-3 text-muted card-img-top fw-bold">Temas avanzados</div>
-                        <div class="card-body">
+                        <button class="btn bg-secondary bg-opacity-20 py-3 px-3 text-start text-muted fw-bold border-0 w-100 toggle-materia d-flex justify-content-between align-items-center" type="button">
+                            <span>Temas avanzados</span>
+                            <small class="ms-2">▼</small>
+                        </button>
+                        <div class="card-body materia-contenido">
                             <h5 class="card-title fw-bold text-chemistry-dark">Química orgánica</h5>
                             <p class="card-text text-muted">Dominio de mecanismos de reacción, grupos funcionales, rutas de síntesis molecular y configuraciones de estereoquímica.</p>
                         </div>
@@ -170,6 +181,19 @@
     actualizarFecha();
     actualizarHora();
     setInterval(actualizarHora, 1000);
+
+const botonesMateria = document.querySelectorAll('.toggle-materia');
+
+botonesMateria.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const contenido = btn.nextElementSibling;
+        if (contenido.style.display === "none") {
+            contenido.style.display = "block";
+        } else {
+            contenido.style.display = "none";
+        }
+    });
+});
 </script>
 
 </body>
